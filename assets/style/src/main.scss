@@ -1,0 +1,67 @@
+@import "utilities/variables";
+@import "components/buttons";
+@import "./layouts/main-header";
+@import "./layouts/showcase-header";
+
+@import "./layouts/_posts-jumbotron.scss";
+@import "pages/contact";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $text-font;
+  font-size: 14px;
+  color: $dark-text-color;
+  background-color: $bg-color;
+  overflow-x: hidden;
+}
+
+.active {
+  background: $dark-bg-color;
+  padding: 0.7rem;
+  color: $light-text-color !important;
+}
+@import "./layouts/top-stories";
+main {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  grid-template-rows: auto;
+  margin: 6%;
+
+  .blog-posts {
+    display: flex;
+    flex-flow: row wrap;
+
+    @import "./layouts/post";
+    @import "./layouts/pagination";
+  }
+
+  .side-bar {
+    @import "./layouts/blog-owner";
+    @import "./layouts/side-posts";
+    @import "./layouts/post-categories";
+    @import "./layouts/post-tags";
+  }
+
+  .blog-post {
+    @import "./layouts/post-header";
+    @import "./layouts/blog-post";
+    @import "./layouts/post-footer";
+    @import "./layouts/prev-next";
+    @import "./layouts/comments";
+    @import "./layouts/leave-a-reply";
+  }
+}
+
+@import "./layouts/footer";
+
+@media screen and (max-width: 1100px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}

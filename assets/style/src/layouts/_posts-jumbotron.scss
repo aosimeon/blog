@@ -1,0 +1,280 @@
+.posts-jumbotron {
+  display: flex;
+  height: 60vw;
+
+  .post {
+    flex-basis: 50%;
+    display: flex;
+    flex-flow: row wrap;
+
+    position: relative;
+    overflow: hidden;
+
+    &:hover .post-thumb,
+    &:focus .post-thumb {
+      transform: scale(1.1);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    a {
+      text-decoration: none;
+      color: $light-text-color;
+      &:hover {
+        background: -webkit-linear-gradient(207deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .post-thumb {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
+    }
+
+
+    .title {
+      font-family: $display-font;
+      letter-spacing: 0.1rem;
+      flex-basis: 100%;
+      padding: 0 4%;
+
+    }
+
+    .post-author {
+      flex-basis: 40%;
+      align-self: center;
+      margin-bottom: -30%;
+      padding-left: 4%;
+
+    }
+
+    .post-snippet {
+      flex-basis: 60%;
+      align-self: center;
+      margin-bottom: -35%;
+      padding-right: 5%;
+      color: $light-text-color;
+    }
+  }
+
+  .title {
+    font-family: $header-font;
+    font-size: calc(3rem - 0.5vw);
+    letter-spacing: 1px;
+    align-self: flex-end;
+    margin-bottom: -35%;
+  }
+
+  .post-author {
+    position: relative;
+    margin-top: 15px;
+    display: grid;
+    color: $light-text-color;
+    grid-template-columns: 60px auto;
+    grid-template-rows: 50px;
+    grid-gap: 0.2rem;
+    grid-template-areas:
+            "author-img author-name"
+            "author-img date";
+
+    &:after {
+      content: "";
+      width: 1px;
+      height: 5rem;
+      position: absolute;
+      top: 0;
+      left: 90%;
+      background: gray;
+    }
+    .author-img {
+      grid-area: author-img;
+      width: 100%;
+      border-radius: 50%;
+    }
+
+    .author-name {
+      grid-area: author-name;
+      font-size: 1rem;
+      font-size: 0.9rem;
+      color: $light-text-color;
+
+      a {
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+
+    .date {
+      grid-area: date;
+      margin-top: -25px;
+      color: $light-text-color;
+    }
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .posts-jumbotron {
+    .post {
+      .title {
+        font-size: calc(2.5rem - 0.5vw);
+        line-height: 1.1;
+        margin-bottom: -27%;
+
+      }
+
+      .post-author {
+        margin-bottom: -20%;
+      }
+
+      .post-snippet {
+        margin-bottom: -25%;
+      }
+
+      .date {
+        grid-area: date;
+        margin-top: -15px
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .posts-jumbotron {
+    .post {
+      .title {
+        font-size: calc(2rem - 0.5vw);
+        line-height: 1.1;
+        margin-bottom: -27%;
+      }
+
+      .post-author {
+        margin-bottom: -20%;
+        font-size: 0.8rem;
+      }
+
+      .post-snippet {
+        margin-bottom: -25%;
+        font-size: 0.8rem;
+      }
+
+      .date {
+        grid-area: date;
+        margin-top: -15px
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .posts-jumbotron {
+    .post {
+      flex-basis: 100%;
+      .title {
+        font-size: calc(2rem - 0.5vw);
+        line-height: 1.1;
+        margin-bottom: -12%;
+      }
+
+      .post-author {
+        margin-bottom: -10%;
+        font-size: 0.8rem;
+
+        &:after {
+          content: "";
+          width: 1px;
+          height: 4rem;
+          background: white;
+          position: absolute;
+          top: 0;
+          left: 90%;
+          background: gray;
+        }
+      }
+
+      .post-snippet {
+        margin-bottom: -11%;
+        font-size: 0.8rem;
+      }
+
+      .date {
+        grid-area: date;
+        margin-top: -1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .posts-jumbotron {
+    .post {
+      .title {
+        font-size: calc(2rem - 1vw);
+      }
+
+      .post-author {
+        margin-bottom: -10%;
+        font-size: 0.8rem;
+
+        &:after {
+          height: 4rem;
+          top: 0;
+          left: 90%;
+        }
+      }
+
+      .post-snippet {
+        margin-bottom: -15%;
+        font-size: 0.8rem;
+      }
+
+      .date {
+        grid-area: date;
+        margin-top: -1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .posts-jumbotron {
+    .post {
+      .title {
+        font-size: calc(1.8rem - 1.2vw);
+        line-height: 1;
+      }
+
+      .post-author {
+        margin-bottom: -5%;
+        font-size: 0.6rem;
+
+        &:after {
+          left: 95%;
+        }
+      }
+
+      .post-snippet {
+        margin-bottom: -10%;
+        font-size: 0.7rem;
+      }
+
+      .date {
+        grid-area: date;
+        margin-top: -1rem;
+      }
+    }
+  }
+}

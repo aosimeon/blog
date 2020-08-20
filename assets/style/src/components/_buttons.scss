@@ -1,0 +1,15 @@
+.btn {
+  border-radius: 50px !important;
+  border: none !important;
+  background-color: $btn-bg-color;
+  color: $light-text-color;
+  font-family: $display-font;
+  letter-spacing: 1px;
+  font-weight: bold;
+
+  &:hover {
+    &:hover {
+      background: -webkit-linear-gradient(207deg, rgba(0, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 100%);
+    }
+  }
+}

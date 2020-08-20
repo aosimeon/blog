@@ -1,0 +1,45 @@
+.comments {
+  margin-bottom: 2.7rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .comment {
+    margin-bottom: 2rem;
+  }
+  .comment-header {
+    display: flex;
+
+    .commenter {
+      display: flex;
+
+      .commenter-img {
+        width: 4rem;
+      }
+      p {
+        margin-left: 10px;
+        line-height: 1.6;
+      }
+    }
+
+    .reply {
+      text-align: center;
+      margin-left: auto;
+      width: 4rem;
+      height: 1.7rem;
+      border-radius: 20px;
+      border: 1px solid grey;
+    }
+  }
+
+  .comment-text {
+    margin-left: calc(4rem + 10px);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .comments {
+    margin-right: 3.5rem;
+  }
+}

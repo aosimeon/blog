@@ -1,0 +1,20 @@
+.post {
+  color: $dark-text-color;
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+
+  p {
+    margin-bottom: 0.8rem;
+    letter-spacing: 1px;
+    font-size: calc(0.8rem + 0.22vw);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .post {
+    margin-right: 3.5rem;
+  }
+}
