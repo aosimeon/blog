@@ -21,6 +21,7 @@
     height: 6rem;
     line-height: 7rem; }
   .main-header .logo-search .logo img {
+    margin-top: 1.7rem;
     width: 13rem; }
   .main-header .logo-search .search {
     text-align: right;
